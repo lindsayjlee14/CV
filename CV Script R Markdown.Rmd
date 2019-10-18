@@ -1,0 +1,129 @@
+---
+title: "Nick Strayer's CV"
+author: Nick Strayer
+date: "`r Sys.Date()`"
+output:
+  pagedown::html_resume:
+    self_contained: true
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(results='asis', echo = FALSE)
+
+library(glue)
+library(tidyverse)
+# Load csv with position info
+position_data <- read_csv('CV.csv')
+
+source('CV_R_script.R')
+```
+
+
+Aside
+=====================================================================
+
+
+
+
+Contact {#contact}
+--------------------------------------------------------------------------------
+
+
+- <i class="fa fa-envelope"></i> lindsay.lee@emory.edu
+- <i class="fa fa-phone"></i> (865) 599-5848
+
+
+
+Language Skills {#skills}
+--------------------------------------------------------------------------------
+
+```{r}
+skills <- tribble(
+  ~skill,               ~level,
+  "R",                  5,
+  "SAS", 4.5,
+  "Stata",             4,
+  "SPSS",               3.5,
+  "Sudaan",                3,
+  "ArcGIS",                3,
+  
+)
+
+build_skill_bars(skills)
+```
+
+Disclaimer {#disclaimer}
+--------------------------------------------------------------------------------
+
+Last updated on `r Sys.Date()`.
+
+Main
+================================================================================
+
+Lindsay Lee {#title}
+--------------------------------------------------------------------------------
+
+Education {data-icon=graduation-cap data-concise=true}
+--------------------------------------------------------------------------------
+
+```{r}
+print_section(position_data, 'Education')
+
+```
+
+Work Experience {data-icon=book}
+--------------------------------------------------------------------------------
+
+```{r}
+print_section(position_data, 'Work Experience')
+```
+Research Experience {data-icon=book}
+--------------------------------------------------------------------------------
+
+```{r}
+print_section(position_data, 'Research Experience')
+```
+
+Scientific Papers {data-icon=book}
+--------------------------------------------------------------------------------
+
+```{r}
+print_section(position_data, 'Scientific Papers')
+```
+
+Abstracts Accepted for Oral Presentation {data-icon=book}
+--------------------------------------------------------------------------------
+
+```{r}
+print_section(position_data, 'Abstracts Accepted for Oral Presentation')
+```
+
+Abstracts Accepted for Poster Presentation {data-icon=book}
+--------------------------------------------------------------------------------
+
+```{r}
+print_section(position_data, 'Abstracts Accepted for Poster Presentation')
+```
+
+
+Awards and Honors {data-icon=book}
+--------------------------------------------------------------------------------
+
+```{r}
+print_section(position_data, 'Awards and Honors')
+```
+
+
+Leadership Experience {data-icon=book}
+--------------------------------------------------------------------------------
+
+```{r}
+print_section(position_data, 'Leadership Experience')
+```
+
+Volunteer and Outreach {data-icon=book}
+--------------------------------------------------------------------------------
+
+```{r}
+print_section(position_data, 'Volunteer and Outreach')
+```
