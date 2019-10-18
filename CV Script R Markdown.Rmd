@@ -9,13 +9,14 @@ output:
 
 ```{r, include=FALSE}
 knitr::opts_chunk$set(results='asis', echo = FALSE)
-
+library(pagedown)
+library(rmarkdown)
 library(glue)
 library(tidyverse)
 # Load csv with position info
 position_data <- read_csv('CV.csv')
 
-source('CV_R_script.R')
+source('CV function.R')
 ```
 
 
