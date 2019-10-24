@@ -13,10 +13,10 @@
   --margin-left: 0.5in;
   --content-width: calc(var(--page-width) - var(--margin-right) - var(--margin-left));
   --root-font-size: 12pt;
-  --sidebar-width: 7rem;
+  --sidebar-width: 8rem;
   --sidebar-background-color: #f2f2f2;
   --main-width: calc(var(--content-width) - var(--sidebar-width));
-  --decorator-horizontal-margin: 0.2in;
+  --decorator-horizontal-margin: 0.1in;
   --sidebar-horizontal-padding: 0.2in;
 
   /* XXX: using px for very good precision control */
@@ -109,14 +109,14 @@ h1, h2{
 
 #title{
   position: relative;
-  left: 0.55in;
-  margin: auto 0.55in 0.3in auto;
+  left: 1in;
+  margin: 0.3in, 0.3in 0.3in 0.3in;
   line-height: 1.2;
 }
 
 #title h1{
   font-weight: 300;
-  font-size: 1.8rem;
+  font-size: 3rem;
   line-height: 1.5;
 }
 
