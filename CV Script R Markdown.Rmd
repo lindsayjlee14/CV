@@ -3,18 +3,25 @@ title: "Lindsay Lee"
 author: Lindsay Lee
 date: "`r Sys.Date()`"
 output:
-  pagedown::html_resume:
-    self_contained: true
+  pagedown::html_resume: 
+    css: ['CV CSS.css']
 ---
 
 ```{r, include=FALSE}
 knitr::opts_chunk$set(results='asis', echo = FALSE)
+library(readr)
+library(dplyr)
 library(pagedown)
 library(rmarkdown)
 library(glue)
 library(tidyverse)
+
+
 # Load csv with position info
 position_data <- read_csv('CV.csv')
+
+# Load csv with publication info
+citation_data <- read_csv('publications.csv')
 
 source('CV function.R')
 ```
@@ -23,6 +30,8 @@ source('CV function.R')
 Aside
 =====================================================================
 
+
+![logo](pic.jpeg){width=100%}
 
 
 
@@ -72,59 +81,78 @@ print_section(position_data, 'Education')
 
 ```
 
-Work Experience {data-icon=book}
+Work Experience {data-icon=book data-concise=true}
 --------------------------------------------------------------------------------
 
 ```{r}
 print_section(position_data, 'Work Experience')
+
+
 ```
-Research Experience {data-icon=book}
+
+Research Experience {data-icon=graduation-cap data-concise=true}
 --------------------------------------------------------------------------------
 
 ```{r}
 print_section(position_data, 'Research Experience')
+
 ```
 
-Scientific Papers {data-icon=book}
+Scientific Papers {data-icon=graduation-cap data-concise=true}
 --------------------------------------------------------------------------------
 
 ```{r}
-print_section(position_data, 'Scientific Papers')
+print_citation(citation_data, 'Scientific Papers')
+
 ```
 
-Abstracts Accepted for Oral Presentation {data-icon=book}
+Abstracts Accepted for Oral Presentation {data-icon=graduation-cap data-concise=true}
 --------------------------------------------------------------------------------
 
 ```{r}
-print_section(position_data, 'Abstracts Accepted for Oral Presentation')
+print_abstract(citation_data, 'Abstracts Accepted for Oral Presentation')
+
 ```
 
-Abstracts Accepted for Poster Presentation {data-icon=book}
+
+Abstracts Accepted for Poster Presentation {data-icon=graduation-cap data-concise=true}
 --------------------------------------------------------------------------------
 
 ```{r}
-print_section(position_data, 'Abstracts Accepted for Poster Presentation')
+print_abstract(citation_data, 'Abstracts Accepted for Poster Presentation')
+
 ```
 
 
-Awards and Honors {data-icon=book}
+Awards and Honors {data-icon=graduation-cap data-concise=true}
 --------------------------------------------------------------------------------
 
 ```{r}
 print_section(position_data, 'Awards and Honors')
+
 ```
 
-
-Leadership Experience {data-icon=book}
+Leadership Experience {data-icon=graduation-cap }
 --------------------------------------------------------------------------------
 
 ```{r}
 print_section(position_data, 'Leadership Experience')
+
 ```
 
-Volunteer and Outreach {data-icon=book}
+Volunteer and Outreach {data-icon=graduation-cap data-concise=true}
 --------------------------------------------------------------------------------
 
 ```{r}
 print_section(position_data, 'Volunteer and Outreach')
+
+```
+
+
+Interests {data-icon=graduation-cap data-concise=true}
+--------------------------------------------------------------------------------
+
+```{r}
+print_section(position_data, 'Interests')
+
 ```

@@ -1,7 +1,4 @@
 
-
-library(pagedown)
-library(rmarkdown)
 # Take a position dataframe and the section id desired
 # and prints the section to markdown. 
 print_section <- function(position_data, section_id){position_data %>% 
@@ -42,6 +39,43 @@ print_section <- function(position_data, section_id){position_data %>%
       "\n\n\n",
     )
 }
+
+
+#print paper citation
+
+print_citation <- function(citation_data, section_id){citation_data %>% 
+    filter(section == section_id) %>% 
+    mutate(id = 1:n()) %>% 
+    group_by(id) %>% 
+    ungroup() %>% 
+    mutate_all(~ifelse(is.na(.), 'N/A', .)) %>% 
+    glue_data(
+      "{authors}. ",
+      "({date}). ",
+      "{title}",
+      "{journal}", 
+      "{volume}",
+      "({issue}), ",
+      "{pages} ",
+      "{link}",
+      "\n\n\n",)}
+
+
+#print abstracts
+
+
+print_abstract <- function(citation_data, section_id){citation_data %>% 
+    filter(section == section_id) %>% 
+    mutate(id = 1:n()) %>% 
+    group_by(id) %>% 
+    ungroup() %>% 
+    mutate_all(~ifelse(is.na(.), 'N/A', .)) %>% 
+    glue_data(
+      "{authors}. ",
+      "{title} ",
+      "{loc} ",
+      "{date}. ",
+      "\n\n\n",)}
 
 # Construct a bar chart of skills
 build_skill_bars <- function(skills, out_of = 5){
