@@ -121,8 +121,8 @@ Abstracts Accepted for Poster Presentation {data-icon=graduation-cap data-concis
 ```{r}
 print_abstract(citation_data, 'Abstracts Accepted for Poster Presentation')
 
-```
 
+```
 
 Awards and Honors {data-icon=graduation-cap data-concise=true}
 --------------------------------------------------------------------------------

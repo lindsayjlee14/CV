@@ -114,11 +114,15 @@ h1, h2{
   line-height: 1.2;
 }
 
+/*section title*/
+
 #title h1{
   font-weight: 300;
   font-size: 3rem;
   line-height: 1.5;
 }
+
+/*position title*/
 
 #title h3{
   font-size: 0.8rem;
@@ -135,7 +139,7 @@ h1, h2{
   position: relative;
   top: var(--row-blocks-padding-top);
   /* XXX: 0.5px for aligning fx printing */
-  left: calc((var(--date-block-width) + var(--decorator-horizontal-margin)));
+  left: calc((var(--date-block-width)));
   font-weight: 400;
   font-size: 1.1rem;
   color: #555;
