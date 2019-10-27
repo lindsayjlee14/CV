@@ -63,7 +63,6 @@ print_citation <- function(citation_data, section_id){citation_data %>%
 
 #print abstracts
 
-
 print_abstract <- function(citation_data, section_id){citation_data %>% 
     filter(section == section_id) %>% 
     mutate(id = 1:n()) %>% 
